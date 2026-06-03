@@ -5,7 +5,7 @@ from typing import Any, Dict, List, Optional
 from urllib.parse import urlparse
 
 from models.endpoint import Endpoint
-from utils.helpers import parse_url_partsth
+from utils.helpers import parse_url_parts
 
 
 # ---------------------------------------------------------------------------
@@ -115,8 +115,7 @@ def parse_ferox_record(record: Dict[str, Any]) -> Optional[Endpoint]:
     )
 
 
-def parse_
-    ferox_results(records: List[Dict[str, Any]]) -> List[Endpoint]:
+def parse_ferox_results(records: List[Dict[str, Any]]) -> List[Endpoint]:
     endpoints: List[Endpoint] = []
     for rec in records:
         ep = parse_ferox_record(rec)
