@@ -1,0 +1,73 @@
+# ReconFlow Configuration
+
+target: ""
+
+output:
+  base_dir: "output"
+  formats:
+    - json
+    - sqlite
+    - txt
+
+scope:
+  strict: true
+  # Extra allowed domains/CIDRs beyond the target
+  extra_domains: []
+
+pipeline:
+  resume: true
+  # Uncomment to disable specific stages
+  # skip: [amass, feroxbuster, arjun]
+
+rate_limit:
+  global_rps: 10
+  burst: 20
+  per_tool:
+    arjun:
+      rps: 2
+      burst: 2
+    feroxbuster:
+      rps: 5
+      burst: 10
+
+tools:
+  subfinder:
+    enabled: true
+    flags: ["-all", "-silent"]
+
+  httpx:
+    enabled: true
+    timeout: 1800          # total process timeout (seconds)
+    threads: 50            # concurrent hosts
+    rate_limit: 150        # requests/second
+    per_host_timeout: 10   # seconds per host
+    retries: 1
+    flags: ["-silent", "-status-code", "-title", "-tech-detect", "-web-server", "-ip", "-cdn", "-json"]
+
+  katana:
+    enabled: true
+    flags: ["-silent"]
+    depth: 3
+
+  feroxbuster:
+    enabled: false   # Enable manually — aggressive
+    wordlist: "config/wordlists/dirs.txt"
+    threads: 50
+    filter_codes: "404,403,400"
+
+  arjun:
+    enabled: false   # Enable manually — slow
+    threads: 5
+    delay: 0.2
+
+interesting_patterns:
+  paths: ["/api", "/admin", "/login", "/dev", "/dashboard", "/v1", "/v2", "/graphql"]
+  extensions_skip: [".png", ".jpg", ".css", ".woff", ".gif", ".ico", ".svg", ".ttf"]
+
+wordlists:
+  dirs: "config/wordlists/dirs.txt"
+  params: "config/wordlists/params.txt"
+
+logging:
+  level: "INFO"
+  file: "output/reconflow.log"
