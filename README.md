@@ -1,8 +1,8 @@
-# ReconFlow 🌊🔍
+# ReconFlow
 
 ReconFlow là một **Framework Tự động Thu thập và Tổng hợp Thông tin (Automated Recon Aggregation Framework)** được thiết kế dành cho các Bug Bounty hunter, pentester và nhà nghiên cứu bảo mật. Công cụ này tự động chạy hàng loạt các công cụ trinh sát (recon) phổ biến, thu thập kết quả, chuẩn hóa, loại bỏ trùng lặp và phân loại các endpoint tìm được nhằm cung cấp một bộ dữ liệu sạch và có khả năng hành động ngay lập tức cho các cuộc đánh giá bảo mật của bạn.
 
-## 🌟 Tính năng chính
+## Tính năng chính
 
 - **Điều phối Công cụ Tự động**: Tích hợp và chạy mượt mà các công cụ tiêu chuẩn trong ngành:
   - `subfinder` để tìm kiếm subdomain
@@ -17,7 +17,7 @@ ReconFlow là một **Framework Tự động Thu thập và Tổng hợp Thông 
 - **Phục hồi Tiến trình**: Khả năng resume (tiếp tục) từ các trạng thái trước đó hoặc bỏ qua các giai đoạn cụ thể.
 - **Xuất Dữ liệu**: Xuất các phát hiện (findings) ra định dạng JSON để dễ dàng tích hợp với các hệ thống khác.
 
-## 🚀 Hướng dẫn cài đặt
+## Hướng dẫn cài đặt
 
 ### Yêu cầu hệ thống
 
@@ -36,7 +36,7 @@ Hãy đảm bảo bạn đã cài đặt Python 3.8+. Bạn cũng cần cài đ�
    pip install -r requirements.txt
    ```
 
-## 🛠️ Cách sử dụng
+## Cách sử dụng
 
 ReconFlow cung cấp giao diện dòng lệnh (CLI) cực kỳ trực quan.
 
