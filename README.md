@@ -73,7 +73,7 @@ python main.py show -t example.com
 python main.py show -t example.com --format interesting --min-score 3
 ```
 
-## 📁 Cấu trúc Dự án
+## Cấu trúc Dự án
 
 - `adapters/tools/`: Các wrapper để tích hợp công cụ recon ngoại vi.
 - `core/`: Các engine lõi xử lý (`orchestrator`, `aggregator`, `classifier`, `deduplicator`, `normalizer`, `exporter`).
@@ -81,6 +81,6 @@ python main.py show -t example.com --format interesting --min-score 3
 - `utils/`: Các hàm hỗ trợ và cấu hình logging.
 - `config/`: Nơi chứa file cấu hình (ví dụ: `config.yaml`).
 
-## ⚠️ Tuyên bố miễn trừ trách nhiệm
+## Tuyên bố miễn trừ trách nhiệm
 
 Công cụ này chỉ được tạo ra với mục đích nghiên cứu bảo mật hợp pháp và giáo dục. Vui lòng chỉ sử dụng ReconFlow lên những hệ thống mà bạn đã được cấp phép kiểm tra một cách rõ ràng.
